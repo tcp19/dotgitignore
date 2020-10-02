@@ -6,6 +6,7 @@ const chalk = require("chalk");
 const nodeIgnore = `node`;
 const laravelIgnore = `laravel`;
 const pythonIgnore = `python`;
+const javaIgnore = 'java'
 
 exec("npm bin", { cwd: __dirname }, (err, stdout, stderr) => {
   console.log(chalk.blue("dotgitignore"));
@@ -16,7 +17,7 @@ exec("npm bin", { cwd: __dirname }, (err, stdout, stderr) => {
         name: "ignore",
         type: "checkbox",
         message: "What project file do you wish to ignore",
-        choices: ["node", "laravel", "python"],
+        choices: ["node", "laravel", "python", "java"],
       },
     ])
     .then((answers) => {
@@ -32,6 +33,9 @@ exec("npm bin", { cwd: __dirname }, (err, stdout, stderr) => {
           break;
         case "python":
           ignoreFile = pythonIgnore;
+          break;
+        case "java":
+          ignoreFile = javaIgnore;
           break;
         default:
           ignoreFile = simpleIgnore;
