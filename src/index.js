@@ -1,50 +1,53 @@
 #!/usr/bin/env node
-const { exec } = require("child_process");
-const { writeFileSync } = require("fs");
+const { writeFile, readdir, readFile } = require("fs").promises;
+const path = require("path");
 const inquirer = require("inquirer");
 const chalk = require("chalk");
-const nodeIgnore = `node`;
-const laravelIgnore = `laravel`;
-const pythonIgnore = `python`;
-const javaIgnore = 'java'
 
-exec("npm bin", { cwd: __dirname }, (err, stdout, stderr) => {
+/**
+ * get all files in the ignore files directory
+ */
+const configFiles = {};
+const configFolderPath = path.resolve(__dirname, "ignorefiles");
+
+/**
+ * read files and loop through them
+ *
+ */
+(async () => {
+  const files = await readdir(configFolderPath).catch(console.log());
+
+  for (let i of files) {
+    // get language name
+    const lng = i.split(".")[0];
+    configFiles[lng] = path.join(configFolderPath, i);
+  }
+
   console.log(chalk.blue("dotgitignore"));
   console.log(chalk.blue("Easily ignore environment files on your projects"));
-  inquirer
+
+  //prompt user
+  await inquirer
     .prompt([
       {
         name: "ignore",
-        type: "checkbox",
+        type: "list",
         message: "What project file do you wish to ignore",
-        choices: ["node", "laravel", "python", "java"],
+        choices: Object.keys(configFiles),
       },
     ])
-    .then((answers) => {
-      const answer = answers.ignore[0];
-      const cwd = process.cwd();
-      let ignoreFile = null;
-      switch (answer) {
-        case "node":
-          ignoreFile = nodeIgnore;
-          break;
-        case "laravel":
-          ignoreFile = laravelIgnore;
-          break;
-        case "python":
-          ignoreFile = pythonIgnore;
-          break;
-        case "java":
-          ignoreFile = javaIgnore;
-          break;
-        default:
-          ignoreFile = simpleIgnore;
-      }
-       writeFileSync(cwd + "/.gitignore", ignoreFile,(err) => {
-           if(err){
-            process.exit(1);
+    .then(async ({ ignore }) => {
+      // read file based on chosen value
+      const config = await readFile(configFiles[ignore]).catch((err) =>
+        console.log(chalk.red(err))
+      );
+      // write fiile to root directory
+      const gitignore = path.join(process.cwd(), ".gitignore");
+      await writeFile(gitignore, config).catch((err) => {
+        if (err) {
+          console.log(chalk.red(err));
         }
-        console.log(chalk.blue("success"))
-       });
+      });
+      console.log(chalk.green("successfully created an ignore file :tada"));
     });
-});
+})();
