@@ -1,0 +1,3 @@
+# dotgitignore
+
+npm run bin
