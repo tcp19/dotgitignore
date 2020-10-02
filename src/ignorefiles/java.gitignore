@@ -7,7 +7,7 @@
 # vscode settings file
 .vscode
 
-# How about the work space files for VSCode?
+# work space files for VSCode
 *.code-workspace
 
 # Compiled class file
