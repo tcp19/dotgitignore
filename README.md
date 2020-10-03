@@ -1,3 +1,18 @@
 # dotgitignore
+dotgitignore is  a cli tool to automatically create .gitignore files depending on different projects and codebase.
 
-npm run bin
+## GETTING STARTED
+ Install the npm package
+ - npx install dotgitignore
+After installation it runs automatically. 
+ 
+## CONTRIBUTING.md 
+If you've ever wanted to contribute to open source, and a great cause, now is your chance!
+
+See the [dotgitignore Contributing docs](https://github.com/Teencodeprojects/dotgitignore/blob/main/CONTRIBUTING.md) for more information
+
+## CONTRIBUTORS
+
+
+## LICENSE
+[ISC](LICENSE)
