@@ -1,5 +1,5 @@
 # dotgitignore
-dotgitignore is  a cli tool that automatically create .gitignore files depending on different projects and codebase.
+dotgitignore is  a cli tool that automatically creates .gitignore file depending on different projects and codebase.
 
 ## GETTING STARTED
  Install the npm package
