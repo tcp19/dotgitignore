@@ -4,6 +4,7 @@ dotgitignore is  a cli tool to automatically create .gitignore files depending o
 ## GETTING STARTED
  Install the npm package
  - npx install dotgitignore
+ 
 After installation it runs automatically. 
  
 ## CONTRIBUTING.md 
