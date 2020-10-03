@@ -1,19 +1,19 @@
 # Contributing to dotgitignore
 
 When contributing to this repository, please first discuss the change you wish to make via issue,
-email, or any other method with the owners of this repository before making a change. 
+email, or any other method with the owners of this repository before making a change.
 
 Please note we have a code of conduct, please follow it in all your interactions with the project.
 
 ## Pull Request Process
 We actively welcome your pull requests:
 
-1. Fork the repo and create your branch from `master`.
+1. Fork the repo and create your branch from `main`.
 2. npm install
 3. npm run bin
 6. If you've added code that should be tested, add tests.
 7. Make sure your code lints.
-8. You may merge the Pull Request in once you have the sign-off of two other developers, or if you 
+8. You may merge the Pull Request in once you have the sign-off of two other developers, or if you
    do not have permission to do that, you may request the second reviewer to merge it for you.
 
 ## Code of Conduct
