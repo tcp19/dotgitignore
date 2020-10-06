@@ -66,7 +66,7 @@ const configFolderPath = path.resolve(__dirname, "ignorefiles");
       const config = await readFile(configFiles[ignore]).catch((err) =>
         console.log(chalk.red(err))
       );
-      console.log(config)
+      // console.log(config)
       // write fiile to root directory
       const gitignore = path.join(process.cwd(), ".gitignore");
       await writeFile(gitignore, config).catch((err) => {
@@ -74,6 +74,6 @@ const configFolderPath = path.resolve(__dirname, "ignorefiles");
           console.log(chalk.red(err));
         }
       });
-      console.log(chalk.green("successfully created an ignore file :tada"));
+      console.log(chalk.green(`Successfully created an ignore file ${ignore} project :tada`));
     });
 })();
