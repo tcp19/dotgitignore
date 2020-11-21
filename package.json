@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "dotgitignore is  a cli tool to automatically create .gitignore files depending on different projects and codebase.",
   "main": "src/index.js",
-  "bin": "src/index.js",
+  "bin": {
+    "dotgitignore": "src/index.js"
+  },
   "scripts": {
     "bin": "node ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,5 +24,14 @@
     "inquirer-autocomplete-prompt": "^1.1.0",
     "lodash": "^4.17.20",
     "meow": "^7.1.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tcp19/dotgitignore.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tcp19/dotgitignore/issues"
+  },
+  "homepage": "https://github.com/tcp19/dotgitignore#readme"
 }
