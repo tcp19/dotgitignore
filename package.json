@@ -1,5 +1,5 @@
 {
-  "name": "dotgitignore",
+  "name": "@tcp19/dotgitignore",
   "version": "1.0.0",
   "description": "dotgitignore is  a cli tool to automatically create .gitignore files depending on different projects and codebase.",
   "main": "src/index.js",
@@ -8,7 +8,11 @@
     "bin": "node ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["git", "gitignore", "cli"],
+  "keywords": [
+    "git",
+    "gitignore",
+    "cli"
+  ],
   "author": "Teencode Organisation Members",
   "license": "ISC",
   "dependencies": {

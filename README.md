@@ -3,7 +3,7 @@ dotgitignore is  a cli tool that automatically creates .gitignore file depending
 
 ## GETTING STARTED
  Install the npm package
- - npx install dotgitignore
+ - npx install @tcp19/dotgitignore
 
 After installation it runs automatically. 
  
