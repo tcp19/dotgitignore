@@ -6,7 +6,7 @@ dotgitignore is a cli tool that automatically creates .gitignore file depending 
  ```npm -g install @tcp19/dotgitignore```
 
 ## Usage
-<h3>Create a gitignore file for a node project</h3>
+<h3>Create a gitignore file for a node js project</h3>
 
 ```dotgitignore``` 
 
